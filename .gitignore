@@ -1,0 +1,6 @@
+/__pycache__
+/todo.db
+*.pyc
+*.py#
+.vscode/tasks.json
+*.json

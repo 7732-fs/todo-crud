@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Update Task</h1>
+    <form method="post" action='/update/task/{{ task.tid }}'>
+        <fieldset>
+        <legend>Update Task</legend>
+        <label for="category">Category</label>
+        <select name="category" id="">
+            {% for category in task.categories %}
+            <option value="{{ category }}">{{ category }}</option> 
+            {% endfor %}
+        </select>
+        <input type="datetime-local" name="date" id="" value={{ task.date }}>
+        <label for="description">Description</label> <input name="description" value="{{ task.description }}">
+    </fieldset>
+    </form>
+{% endblock  content %}

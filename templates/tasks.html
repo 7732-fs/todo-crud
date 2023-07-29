@@ -1,0 +1,19 @@
+<div class="tasks">
+    <div class="task">
+        <div class="category">Category</div>
+        <div class="description">Description</div>
+        <div class="date">Date</div>
+        <div class="control"></div>
+    </div>
+    {% for task in tasks %}
+        <div class="task">
+        <div class="category">{{ task.category }}</div>
+        <div class="description">{{ task.description }} </div>
+        <div class="date">{{ task.date.split('T')[0] }} </div>
+        <form class="control" action="/delete" method='post'>
+            <input type="hidden" name="id" value={{ task.tid }}>
+            <input type="submit" value="delete">
+        </form>
+    </div>
+    {% endfor %}    
+</div>

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Select Task to Update:</h1>
+    <div class="tasks">
+        <div class="task">
+            <div class="category">Category</div>
+            <div class="description">Description</div>
+            <div class="date">Date</div>
+            <div class="date"></div>
+        </div>
+        {% for task in tasks %}
+        <div class="task">
+            <div class="category">{{ task.category }}</div>
+            <div class="description" ">{{ task.description }} </div>
+            <div class="date">{{ task.date }} </div>
+            <a href="/update/task/{{ task.tid }}">Update</a>
+        </div>
+        {% endfor %}    
+    </div>
+    {% endblock content %}
